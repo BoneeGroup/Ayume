@@ -1,0 +1,136 @@
+{
+    "prefix": {
+        "standard": "The prefix for this server is already standard.",
+        "error": "Prefix cannot be more than 4 characters.",
+        "successfully": "This server's prefix has been successfully reset.",
+        "newPrefix": "New prefix successfully configured."
+    },
+    "help": {
+        "Música": "Music",
+        "Utilidades": "Utils",
+        "Filtros": "Filters",
+        "Radio": "Radio",
+        "footer": "I was created by ",
+        "serverSupport": "Support server",
+        "botInvite": "Invite me",
+        "vote": "Vote for me"
+    },
+    "lang": {
+        "select": "What language do you want? Click on the buttons below.",
+        "closed": "I closed the language selection menu.",
+        "cancel": "Cancel",
+        "authorOnly": "Only the command author can choose the new language."
+    },
+    "play": {
+        "NoChannel": "Please connect to a voice channel.",
+        "permError": "I cannot connect to this voice channel.",
+        "mes": "Connect to the same voice channel as me.",
+        "error": "An error happened sorry: ",
+        "noResults": "No results were found for your search.",
+        "trackLoad": "<:mp3:845373024713703434> | Added {} on the waiting list.",
+        "playlistLoad": "<:mp3:845373024713703434> | Added playlist {} on the waiting list.",
+        "playlistLoad2": "<:mp3:845373024713703434> | Now playing the playlist {}",
+        "searchResults": "<:mp3:845373024713703434> | Added the following songs to the queue:\n{}",
+        "noLink": "Please do not place links.",
+        "sendNumber": "Send the song number to add the queue. If you want to cancel send `cancel`",
+        "cancel": "Selection canceled.",
+        "time": "Selection time is over.",
+        "musics": " Musics",
+        "onlyAuthor": "Only the author of the command can choose the songs."
+    },
+    "pause": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "channelError": "Please connect to a voice channel.",
+        "channelError2": "Connect to the same voice channel as me.",
+        "noPaused": "The music is already paused.",
+        "successfully": "Ok. Paused music."
+    },
+    "resume": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "channelError": "Please connect to a voice channel.",
+        "channelError2": "Connect to the same voice channel as me.",
+        "noResumed": "The music is not paused.",
+        "successfully": "Ok. Music resumed."
+    },
+    "volume": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "channelError": "Please connect to a voice channel.",
+        "channelError2": "Connect to the same voice channel as me.",
+        "volume": "The volume is set to {}.",
+        "invalid": "The volume can only be set from 1 to 100.",
+        "successfully": "Ok. Music volume set to {}."
+    },
+    "queue": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "footer": "Total songs in queue: "
+    },
+    "skip": {
+        "channelError": "Please connect to a voice channel.",
+        "channelError2": "Connect to the same voice channel as me.",
+        "nothing": "Unfortunately there is nothing playing.",
+        "slash": "Music skipped successfully."
+    },
+    "filters": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "enabled": "Filter {} activated.",
+        "disabled": "Filter {} disabled."
+    },
+    "stop": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "channelError": "Please connect to a voice channel.",
+        "channelError2": "Connect to the same voice channel as me.",
+        "destroyed": "Okay. I stopped playing and disconnected."
+    },
+    "join": {
+        "error": "You need to connect to some voice channel."
+    },
+    "lavalink": {
+        "memory": "Memory"
+    },
+    "loop": {
+        "nothing": "Unfortunately there is nothing playing.",
+        "enabled": "Loop has been activated.",
+        "disabled": "Loop has been disabled."
+    },
+    "events": {
+        "music": {
+            "playingNow": "Playing now",
+            "error": "An error has occurred if it happens again please contact {}",
+            "radio": "<:AnimuHaruk:858566487495933952> | Radio Animu started playing.",
+            "finish": "<:mp3:845373024713703434> | The music queue ended...",
+            "leaving": "Leaving **${vcName}** in ${this.client.settings.voiceLeave} because I was left alone.",
+            "alone": "I left **${vcName}** because I was left alone.",
+            "leaving2": "I will leave the voice channel at ${this.client.utils.time(60000)} as it ended up as songs."
+        },
+        "message": {
+            "prefix": "Hi **${message.author.tag}** my prefix on this server is `${prefix}`\n[Invite me](https://discord.com/api/oauth2/authorize?client_id=716080166291374124&permissions=2150648832&scope=bot%20applications.commands) **|** [Vote for me](https://top.gg/bot/716080166291374124) **|** [My server](https://discord.gg/bVWdscg)",
+            "footer": "Version",
+            "dmError": "Sorry. This command cannot be used here.",
+            "ownerError": "The command can only be used by the owner.",
+            "enabledError": "This command is disabled.",
+            "nsfwError": "This command can only be used on NSFW channels.",
+            "argsError": {
+                "start": "This command requires arguments to be used. Follow this method. ",
+                "end": "This command does not have a usage format."
+            },
+            "permissions": {
+                "missingUser": "You are missing the permissions ",
+                "endUser": " to use this command.",
+                "missingBot": "I'm missing the permissions ",
+                "endBot": " to run this command"
+            },
+            "error": "An error has occurred if, it happens again please contact {}"
+        }
+    },
+    "botinfo": {
+        "playing": "Playing music in",
+        "memoryUsage": "Ram usage",
+        "guilds": "Guilds",
+        "users": "Users"
+    },
+    "radio": {
+        "noLeaveVoice": "I will not exit the voice channel as soon as you do.",
+        "yesLeaveVoice": "I will exit the voice channel as soon as you leave.",
+        "queueAdd": "<:AnimuHaruk:858566487495933952> | Animu radio was added to the queue."
+    }
+}

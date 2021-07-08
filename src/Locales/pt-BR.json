@@ -1,0 +1,136 @@
+{
+    "prefix": {
+        "standard": "O prefixo deste servidor já está como padrão.",
+        "error": "Prefixo não pode ser mais que 4 caracteres.",
+        "successfully": "Prefixo deste servidor foi resetado com sucesso.",
+        "newPrefix": "Novo prefixo configurado com sucesso."
+    },
+    "help": {
+        "Música": "Música",
+        "Utilidades": "Utilidades",
+        "Filtros": "Filtros",
+        "Radio": "Radio",
+        "footer": "Fui criada por ",
+        "serverSupport": "Servidor de suporte",
+        "botInvite": "Me convide",
+        "vote": "Vote em mim"
+    },
+    "lang": {
+        "select": "Qual idioma você quer? Clique nos botões abaixo.",
+        "closed": "Fechei o menu de seleção de idiomas.",
+        "cancel": "Cancelar",
+        "authorOnly": "Apenas o autor do comando pode escolher o novo idioma."
+    },
+    "play": {
+        "NoChannel": "Por favor se conecte a algum canal de voz.",
+        "permError": "Não consigo me conectar a este canal de voz.",
+        "mes": "Se conecte ao mesmo canal de voz que eu.",
+        "error": "Um erro aconteceu desculpa: ",
+        "noResults": "Não foi encontrado resultados para sua pesquisa.",
+        "trackLoad": "<:mp3:845373024713703434> | Adicionado {} na lista de espera.",
+        "playlistLoad": "<:mp3:845373024713703434> | Adicionado a playlist {} na lista de espera.",
+        "playlistLoad2": "<:mp3:845373024713703434> | Tocando agora a playlist {}",
+        "searchResults": "<:mp3:845373024713703434> | Adicionado as seguintes músicas à fila:\n{}",
+        "noLink": "Por favor não coloque links.",
+        "sendNumber": "Envie o numero da música para adicionar a fila. Caso queira cancelar envie `cancelar`",
+        "cancel": "Seleção cancelada.",
+        "time": "O tempo de seleção acabou.",
+        "musics": " Músicas",
+        "onlyAuthor": "Apenas o autor do comando pode escolher as músicas."
+    },
+    "pause": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "channelError": "Por favor se conecte a algum canal de voz.",
+        "channelError2": "Se conecte ao mesmo canal de voz que eu.",
+        "noPaused": "A música já está pausada.",
+        "successfully": "Ok. Música pausada."
+    },
+    "resume": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "channelError": "Por favor se conecte a algum canal de voz.",
+        "channelError2": "Se conecte ao mesmo canal de voz que eu.",
+        "noResumed": "A música não está pausada.",
+        "successfully": "Ok. Música retomada."
+    },
+    "volume": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "channelError": "Por favor se conecte a algum canal de voz.",
+        "channelError2": "Se conecte ao mesmo canal de voz que eu.",
+        "volume": "O volume esta setado em {}.",
+        "invalid": "O volume so pode ser setado de 1 a 100.",
+        "successfully": "Ok. Volume da música setado em {}."
+    },
+    "queue": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "footer": "Total de músicas na fila: "
+    },
+    "skip": {
+        "channelError": "Por favor se conecte a algum canal de voz.",
+        "channelError2": "Se conecte ao mesmo canal de voz que eu.",
+        "nothing": "Infelizmente não tem nada tocando.",
+        "slash": "Música pulada com sucesso."
+    },
+    "filters": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "enabled": "Filtro {} ativado.",
+        "disabled": "Filtro {} desativado."
+    },
+    "stop": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "channelError": "Por favor se conecte a algum canal de voz.",
+        "channelError2": "Se conecte ao mesmo canal de voz que eu.",
+        "destroyed": "Ok. Parei de tocar e me desconectei."
+    },
+    "join": {
+        "error": "Você precisa se connectar em algum canal de voz."
+    },
+    "lavalink": {
+        "memory": "Memória"
+    },
+    "loop": {
+        "nothing": "Infelizmente não tem nada tocando.",
+        "enabled": "Loop foi ativado.",
+        "disabled": "Loop foi desativado."
+    },
+    "events": {
+        "music": {
+            "playingNow": "Tocando agora",
+            "error": "Um erro ocorreu caso aconteça novamente contate {}",
+            "radio" : "<:AnimuHaruk:858566487495933952> | A radio Animu começou a tocar.",
+            "finish": "<:mp3:845373024713703434> | Acabou a fila de música saindo...",
+            "leaving": "Sairei do canal **${vcName}** em ${this.client.settings.voiceLeave} por ficar sozinha.",
+            "alone": "Eu sai do **${vcName}** porque fiquei sozinha.",
+            "leaving2": "Eu sairei do canal de voz em $ {this.client.utils.time(60000)} pois acabou como músicas."
+        },
+        "message": {
+            "prefix": "Olá **${message.author.tag}** meu prefixo neste servidor é `${prefix}`\n[Me convide](https://discord.com/api/oauth2/authorize?client_id=716080166291374124&permissions=2150648832&scope=bot%20applications.commands) **|** [Vote em mim](https://top.gg/bot/716080166291374124) **|** [Meu servidor](https://discord.gg/bVWdscg)",
+            "footer": "Versão",
+            "dmError": "Desculpa. Este comando não pode ser ultilizado aqui.",
+            "ownerError": "O comando so pode ser utilizado pelo dono.",
+            "enabledError": "Este comando está desabilitado.",
+            "nsfwError": "Este comando so pode ser usado em canais NSFW.",
+            "argsError": {
+                "start": "Este comando requer argumentos para ser usado. Siga este metodo ",
+                "end": "Este comando não tem um formato de uso."
+            },
+            "permissions": {
+                "missingUser": "Está lhe faltando as permissões ",
+                "endUser": " para usar este comando.",
+                "missingBot": "Está me faltando as permissões ",
+                "endBot": " para rodar este comando"
+            },
+            "error": "Um erro ocorreu caso aconteça novamente contate {}"
+        }
+    },
+    "botinfo": {
+        "playing": "Tocando música em",
+        "memoryUsage": "Uso de memória",
+        "guilds": "Servidores",
+        "users": "Usuários"
+    },
+    "radio": {
+        "noLeaveVoice": "Eu não sairei do canal de voz assim que você sair.",
+        "yesLeaveVoice": "Eu sairei do canal de voz assim que você sair.",
+        "queueAdd": "<:AnimuHaruk:858566487495933952> | A rádio Animu foi adicionado a fila."
+    }
+}
