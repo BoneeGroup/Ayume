@@ -1,0 +1,5 @@
+node_modules
+src/events/consoleEvents/debug.js
+src/System/Config.js
+.idea
+src/System/db.json
