@@ -29,7 +29,7 @@ module.exports = class AyumeManager extends Manager {
 				let embed = new MessageEmbed()
 				embed.setColor(client.guilds.cache.get(player.options.guild).me.roles.highest.color || client.settings.color)
 
-				if (track.title == "Animu FM is a Brazilian otaku radio focused on animesongs, vocaloid, Japanese rhythm games, Brazillan fansings, and Brazilian openings and closings") {
+				if (track.title === "Animu FM is a Brazilian otaku radio focused on animesongs, vocaloid, Japanese rhythm games, Brazillan fansings, and Brazilian openings and closings") {
 					embed.setDescription(lang.events.music.radio)
 				} else {
 					embed.setDescription(`<:mp3:845373024713703434> | ${lang.events.music.playingNow} **${track.title}**`)
@@ -43,7 +43,7 @@ module.exports = class AyumeManager extends Manager {
 				let embed = new MessageEmbed()
 				embed.setColor(client.guilds.cache.get(player.options.guild).me.roles.highest.color || client.settings.color)
 
-				if (track.title == "Animu FM is a Brazilian otaku radio focused on animesongs, vocaloid, Japanese rhythm games, Brazillan fansings, and Brazilian openings and closings") {
+				if (track.title === "Animu FM is a Brazilian otaku radio focused on animesongs, vocaloid, Japanese rhythm games, Brazillan fansings, and Brazilian openings and closings") {
 					embed.setDescription(lang.events.music.radio)
 				} else {
 					embed.setDescription(`<:mp3:845373024713703434> | ${lang.events.music.playingNow} **${track.title}**`)
@@ -70,7 +70,7 @@ module.exports = class AyumeManager extends Manager {
 			if (lang === "en-US") lang = client.lang.en
 			if (lang === "pt-BR") lang = client.lang.pt
 
-			return channel.send(lang.events.music.error.replace("{}", owner.tag) + "\n" + "`" + "**" + track.title + "**" + "\n" + payload.error + "`")
+			return channel.send(lang.events.music.error.replace("{}", owner.tag) + "\n" + "`" + payload.error + "`")
 		})
 
 		this.on("trackStuck", async (player, track, payload) => {
@@ -79,7 +79,7 @@ module.exports = class AyumeManager extends Manager {
 			if (lang === "en-US") lang = client.lang.en
 			if (lang === "pt-BR") lang = client.lang.pt
 
-			return channel.send(lang.events.music.error.replace("{}", owner.tag) + "\n" + "`" + "**" + track.title + "**" + "\n" + payload.error + "`")
+			return channel.send(lang.events.music.error.replace("{}", owner.tag) + "\n" + "`" + payload.error + "`")
 		})
 
 		this.on("queueEnd", async (player) => {
@@ -87,8 +87,6 @@ module.exports = class AyumeManager extends Manager {
 			let lang = db.get(`${player.options.guild}_lang`) || "pt-BR"
 			if (lang === "en-US") lang = client.lang.en
 			if (lang === "pt-BR") lang = client.lang.pt
-
-			if (player.radio) return
 
 			player.destroy()
 			return channel.send({

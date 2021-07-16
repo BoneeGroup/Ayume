@@ -8,11 +8,11 @@ module.exports = class extends Event {
 
         await interaction.defer()
 
-        if (!interaction.guildID || !interaction.channelID) {
+        if (!interaction.guildId || !interaction.channelId) {
             return interaction.editReply("Comandos ainda não podem ser executados através de mensagens diretas! Vá em um servidor e tente novamente :heart:");
         }
         
-        if (!interaction.client.guilds.cache.get(interaction.guildID)) {
+        if (!interaction.client.guilds.cache.get(interaction.guildId)) {
             return interaction.editReply("Eu não fui adiciona corretamente no servidor! Me adicione através [deste link](https://ayume.bonee.xyz/add)");
         }
 
@@ -34,6 +34,7 @@ module.exports = class extends Event {
                 return this.client.channels.cache.get(interaction.channel.id).send(c, o)
             }
         }
+
         interaction.edit = async (c, o) => {
             if (!response) {
                 response = true;
@@ -43,6 +44,6 @@ module.exports = class extends Event {
             }
         }
 
-        this.client.emit("message", interaction)
+        this.client.emit("messageCreate", interaction)
     }
 }

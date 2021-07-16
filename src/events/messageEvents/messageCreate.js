@@ -1,5 +1,4 @@
 const Event = require('../../Structures/Event')
-//const MusicSelector = require("../../Structures/painelMusic")
 
 module.exports = class extends Event {
 
@@ -8,8 +7,6 @@ module.exports = class extends Event {
 		const mentionRegex = new RegExp(`^<@!?${this.client.user.id}>$`)
 
 		if (message.author.bot) return;
-
-		//await MusicSelector(this.client, message)
 
 		let lang = db.get(`${message.guild.id}_lang`) || "pt-BR"
 
@@ -20,14 +17,11 @@ module.exports = class extends Event {
 
 
 		switch (lang) {
-			case 'pt-BR':
+			case "pt-BR":
 				lang = ptBR
 			break;
-			case 'en-US':
+			case "en-US":
 				lang = enUS
-			break;
-			default:
-				lang = ptBR
 			break;
 		}
 

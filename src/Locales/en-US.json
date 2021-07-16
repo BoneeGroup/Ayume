@@ -30,7 +30,8 @@
         "trackLoad": "<:mp3:845373024713703434> | Added {} on the waiting list.",
         "playlistLoad": "<:mp3:845373024713703434> | Added playlist {} on the waiting list.",
         "playlistLoad2": "<:mp3:845373024713703434> | Now playing the playlist {}",
-        "searchResults": "<:mp3:845373024713703434> | Added the following songs to the queue:\n{}",
+        "searchResults": "<:mp3:845373024713703434> | Added {} on the waiting list.",
+        "searchResults2": "<:mp3:845373024713703434> | Added the following songs to the queue:\n{}",
         "noLink": "Please do not place links.",
         "sendNumber": "Send the song number to add the queue. If you want to cancel send `cancel`",
         "cancel": "Selection canceled.",
@@ -84,13 +85,12 @@
     "join": {
         "error": "You need to connect to some voice channel."
     },
-    "lavalink": {
-        "memory": "Memory"
-    },
     "loop": {
         "nothing": "Unfortunately there is nothing playing.",
-        "enabled": "Loop has been activated.",
-        "disabled": "Loop has been disabled."
+        "trackLoopE": "The track loop has been activated.",
+        "queueLoopE": "The queue loop has been activated.",
+        "trackLoopD": "The track loop has been deactivated.",
+        "queueLoopD": "The queue loop has been deactivated."
     },
     "events": {
         "music": {

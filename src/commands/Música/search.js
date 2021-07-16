@@ -1,5 +1,5 @@
 const Command = require('../../Structures/Command')
-const { MessageEmbed, MessageSelectMenu } = require("discord.js")
+const { MessageEmbed, MessageSelectMenu, MessageActionRow } = require("discord.js")
 
 module.exports = class extends Command {
     constructor(...args) {
@@ -30,7 +30,7 @@ module.exports = class extends Command {
 
         if (!play) {
 
-            const player = message.client.music.create({
+            const player = this.client.music.create({
                 guild: message.guild.id,
                 voiceChannel: channel.id,
                 textChannel: message.channel.id,
@@ -71,7 +71,7 @@ module.exports = class extends Command {
             break;
 
             case 'PLAYLIST_LOADED':
-                await await message.reply(lang.play.noLinks)
+                await message.reply(lang.play.noLinks)
                 player.destroy()
             break;
 
@@ -81,7 +81,7 @@ module.exports = class extends Command {
             break;
 
             case 'SEARCH_RESULT':
-                let max = 15, collected, filter = (interaction) => ["musicSelector"].includes(interaction.customID)
+                let max = 15, collected, filter = (interaction) => ["musicSelector"].includes(interaction.customId)
                 if (res.tracks.length < max) max = res.tracks.length;
 
                 let options = res.tracks.slice(0, max).map(({ title, identifier }) => {
@@ -90,7 +90,7 @@ module.exports = class extends Command {
 
 
                 const menu = new MessageSelectMenu()
-                menu.setCustomID("musicSelector")
+                menu.setCustomId("musicSelector")
                 menu.setPlaceholder(max + lang.play.musics)
                 menu.setMinValues(1)
                 menu.setMaxValues(max)
@@ -109,6 +109,9 @@ module.exports = class extends Command {
                     ])
                 }
 
+                const row = new MessageActionRow()
+                row.addComponents([menu])
+
                 const results = res.tracks
                     .slice(0, max)
                     .map((track, index) => `\`${++index}.\` **[${track.title}](${track.uri})**`)
@@ -118,14 +121,13 @@ module.exports = class extends Command {
                 embed3.setColor(message.guild.me.roles.highest.color || this.client.settings.color)
                 embed3.setTimestamp()
                 embed3.setDescription(results)
-                let msg = await message.reply({ embeds: [embed3], components: [[menu]] })
+                let msg = await message.reply({ embeds: [embed3], components: [row] })
 
-                const collector = message.channel.createMessageComponentInteractionCollector({ time: 60000, idle: 60000 })
+                const collector = message.channel.createMessageComponentCollector({ filter, time: 60000, idle: 60000 })
 
                 collector.on("end", async (interaction) => {
-                    menu.setDisabled(true)
                     return await msg.edit({
-                        components: [[menu]]
+                        components: []
                     })
                 })
 
@@ -135,7 +137,7 @@ module.exports = class extends Command {
                         return interaction.reply({ content: lang.play.onlyAuthor, ephemeral: true })
                     }
 
-                    switch(interaction.customID) {
+                    switch(interaction.customId) {
                         case "musicSelector":
 
                             let track = []
@@ -144,19 +146,18 @@ module.exports = class extends Command {
                                 track.push(res.tracks.find(a => a.identifier === id))
                             }
 
-
                             player.queue.add(track)
-                            if (!player.playing && !player.paused && player.queue.totalSize === track.length) player.play()
+                            if (!player.playing && !player.paused && player.queue.totalSize === track.length) await player.play()
 
                             if (message.slash) player.set('interaction', message)
 
-
                             let embed = new MessageEmbed()
                             embed.setColor(message.guild.me.roles.highest.color || this.client.settings.color)
-                            embed.setDescription(lang.play.searchResults.replace("{}", track.map((a, index) => `${index + 1}º **${a.title}**`).join("\n")))
+                            embed.setDescription(lang.play.searchResults2.replace("{}", track.map((a, index) => `${index + 1}º **${a.title}**`).join("\n")))
+
                             await interaction.reply({ embeds: [embed], ephemeral: false })
-                            menu.setDisabled(true)
-                            await msg.edit({ components: [[menu]] })
+
+                            await msg.edit({ components: [] })
                             collector.stop()
                         break;
                     }

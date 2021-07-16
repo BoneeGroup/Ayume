@@ -7,9 +7,6 @@ app.use(express.static(join(__dirname, "frontend")))
 module.exports = class WebSite {
     constructor(client) {
         this.client = client
-    }
-
-    startWebServer() {
 
         let command = this.client.commands.filter(a => a.category !== "Desenvolvedor").map(({ category, name, aliases, description }) => {
             return { category, name, aliases, description }

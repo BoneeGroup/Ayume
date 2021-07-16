@@ -7,7 +7,7 @@ module.exports = class Loader {
 
     async start() {
 
-        new website(this.client).startWebServer()
+        new website(this.client)
 
         const DataBaseManager = require("denky-database")
 

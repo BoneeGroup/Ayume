@@ -62,7 +62,7 @@ module.exports = Structure.extend('Player', Player => {
                 this.setVaporwave(false)
                 this.setNightcore(false)
                 this.setEqualizer(1, 0.95)
-            } else this.clearEQ()
+            } else this.clearEffects()
             return this
         }
 

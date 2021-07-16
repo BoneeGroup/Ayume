@@ -12,15 +12,13 @@ module.exports = class extends Event {
 
 		if (!player) return
 
-		if (!newVoice.guild.members.cache.get(this.client.user.id).voice.channelID) return player.destroy()
+		if (!newVoice.guild.members.cache.get(this.client.user.id).voice.channelId) return player.destroy()
 
 		if (oldVoice.id === this.client.user.id) return
 
-		if (player.radio === true) return
+		if (!oldVoice.guild.members.cache.get(this.client.user.id).voice.channelId) return
 
-		if (!oldVoice.guild.members.cache.get(this.client.user.id).voice.channelID) return
-
-		if (oldVoice.guild.members.cache.get(this.client.user.id).voice.channel.id === oldVoice.channelID) {
+		if (oldVoice.guild.members.cache.get(this.client.user.id).voice.channel.id === oldVoice.channelId) {
 
 			if (oldVoice.guild.me.voice.channel && oldVoice.guild.me.voice.channel.members.size == 1) {
 
@@ -43,7 +41,7 @@ module.exports = class extends Event {
 					if (newPlayer) {
 						player.destroy()
 					} else { 
-                        oldVoice.guild.voice.channel.leave().catch(() => { })
+                        oldVoice.guild.me.voice.channel.leave()
                     }
 
 					return await msg.edit({

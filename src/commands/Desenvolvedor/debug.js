@@ -12,6 +12,6 @@ module.exports = class extends Command {
 
     async run({ message }) {
 
-        message.reply(this.client.ws.shards.map(s => "```js\n" + `[Shard ${s.id}] ${this.client.guilds.cache.filter(g => g.shardID === s.id).size} servidores | ${s.ping}ms` + "```").join("\n"))
+        message.reply(this.client.ws.shards.map(s => "```js\n" + `[Shard ${s.id}] ${this.client.guilds.cache.filter(g => g.shardId === s.id).size} servidores | ${s.ping}ms` + "```").join("\n"))
     }
 }

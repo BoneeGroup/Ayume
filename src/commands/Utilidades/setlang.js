@@ -19,25 +19,25 @@ module.exports = class extends Command {
     async run({ message }, lang) {
 
         let brazil = new MessageButton()
-        brazil.setCustomID("brazil")
+        brazil.setCustomId("brazil")
         brazil.setLabel("Português")
         brazil.setStyle("PRIMARY")
         brazil.setEmoji("🇧🇷")
 
         let us = new MessageButton()
-        us.setCustomID("us")
+        us.setCustomId("us")
         us.setLabel("English")
         us.setStyle("PRIMARY")
         us.setEmoji("🇺🇸")
 
         let x = new MessageButton()
-        x.setCustomID("x")
+        x.setCustomId("x")
         x.setLabel(lang.lang.cancel)
         x.setStyle("PRIMARY")
         x.setEmoji("❌")
 
 
-        const filter = i => ["x", "us", "brazil"].includes(i.customID)
+        const filter = i => ["x", "us", "brazil"].includes(i.customId)
 
         let embed = new MessageEmbed()
         embed.setDescription("🇧🇷 **Português**\n🇺🇸 **English**")
@@ -45,8 +45,7 @@ module.exports = class extends Command {
         embed.setTimestamp()
         embed.setColor(message.guild.me.roles.highest.color || this.client.settings.color)
 
-        const collector = message.channel.createMessageComponentInteractionCollector(filter, { time: 120000, idle: 120000 })
-
+        const collector = message.channel.createMessageComponentCollector({ filter, time: 120000, idle: 120000 })
 
         switch (db.get(`${message.guild.id}_lang`)) {
             case "en-US":
@@ -78,7 +77,7 @@ module.exports = class extends Command {
                 return await button.reply({ content: lang.lang.authorOnly, ephemeral: true })
             }
 
-            switch(button.customID) {
+            switch(button.customId) {
                 case 'brazil':
                     await button.deferUpdate().catch()
                     await msg.edit({

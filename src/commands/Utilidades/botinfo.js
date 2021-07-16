@@ -54,6 +54,7 @@ module.exports = class extends Command {
         )
         embed.setColor(message.guild.me.roles.highest.color || this.client.settings.color)
         embed.setTimestamp()
-        return await message.reply({ embeds: [embed], components: [row] })
+        //embed.setFooter("Este servidor usa " + this.client.utils.formatBytes(sizeof(message.guild)) + " da minha memoria")
+        return await message.reply({ embeds: [embed] })
     }
 }
