@@ -1,30 +1,36 @@
 {
-  "name": "ayume",
-  "version": "0.0.1",
-  "description": "ayume discord bot",
-  "main": "index.js",
+  "name": "fuyumibot",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/index.js",
+    "build": "pnpm tsc",
+    "generate": "prisma generate",
+    "prisma:all": "pnpm generate && prisma db push"
   },
-  "author": "BONEE",
-  "license": "ISC",
+  "prisma": {
+    "schema": "src/Database/schema.prisma"
+  },
   "dependencies": {
-    "@discordjs/voice": "github:discordjs/voice",
-    "ascii-table": "0.0.9",
-    "axios": "^0.21.1",
-    "colors": "^1.4.0",
-    "denky-database": "^1.0.6",
-    "discord.js": "^13.0.0-dev.f200f14.1626436969",
-    "discord.js-collector": "^1.8.9",
-    "discord.js-self": "^12.0.4",
-    "erela.js": "^2.3.3",
-    "express": "^4.17.1",
-    "glob": "^7.1.6",
-    "lowdb": "^1.0.0",
-    "node-fetch": "latest",
-    "object-sizeof": "^1.6.1",
-    "path": "^0.12.7",
-    "url": "^0.11.0",
-    "util": "^0.12.3"
-  }
+    "@prisma/client": "^5.19.1",
+    "chalk": "^5.3.0",
+    "discord-hybrid-sharding": "^2.2.0",
+    "discord.js": "^14.16.2",
+    "genius-lyrics": "^4.4.7",
+    "get-image-colors": "^4.0.1",
+    "glob": "^10.4.5",
+    "kazagumo": "^3.2.1",
+    "shoukaku": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/get-image-colors": "^4.0.5",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.16.5",
+    "prisma": "^5.19.1",
+    "types": "^0.1.1",
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "pnpm@7.29.1"
 }

@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://postgres:postgrespass@localhost:32768"
+}
+
+model BaseUserData {
+  userId       String  @id @default("")
+  reason       String  @default("")
+  blacklist    Boolean @default(false)
+  punhisedDate BigInt  @default(0) @db.BigInt
+}
+
+model BaseGuildData {
+  guildId     String @id @default("")
+  logsChannel String @default("")
+  djRole      String @default("")
+}
+
+model PremiumUser {
+  userId      String @id @default("")
+  premiumType String @default("")
+  startTime   BigInt @default(0) @db.BigInt
+  endTime     BigInt @default(0) @db.BigInt
+}
+
+model Playlist {
+  userId    String @id
+  songs     String[] @default([])
+  created   DateTime @default(now())
+  thumbnail String?
+  name      String
+  public    Boolean  @default(false)
+}
+
+model MostPlayed {
+  id    String @id @default("")
+  title String @default("")
+  count Int    @default(0)
+  url   String @default("")
+}

@@ -1,6 +1,4 @@
-node_modules
-src/events/consoleEvents/debug.js
-src/System/Config.js
-.idea
-src/System/db.json
-src/Music/Nodes.js
+/node_modules
+/dist
+/.vscode
+/src/others/Config.ts
